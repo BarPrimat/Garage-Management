@@ -14,7 +14,7 @@ namespace DesktopGUI
         [STAThread]
         public static void Main()
         { 
-            new ManagerLogicGUi();
+            new ManagerLogicGUI();
         }
     }
 }

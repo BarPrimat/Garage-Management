@@ -15,6 +15,7 @@ namespace DesktopGUI.SubMenus
     {
         private Panel m_DisplayPanel;
         private TextBox m_DisplayTextBox;
+        private Vehicle m_CurrentVehicle;
 
         public DisplaySpecificVehicleForm()
         {
@@ -46,16 +47,9 @@ namespace DesktopGUI.SubMenus
 
         private void displayNowButton_Click(object sender, EventArgs e)
         {
-            Vehicle vehicle;
-            ManagerLogicGUi.GarageManager.FindVehicle(licenseNumberTextBox.Text, out vehicle);
-
-            if(vehicle != null)
+            if (m_CurrentVehicle != null)
             {
-                m_DisplayTextBox.Text = vehicle.ToString();
-            }
-            else
-            {
-                m_DisplayTextBox.Text = "The vehicle is not in the garage";
+                m_DisplayTextBox.Text = m_CurrentVehicle.ToString();
             }
 
             this.Controls.Remove(mainPanel);
@@ -68,6 +62,11 @@ namespace DesktopGUI.SubMenus
             this.Controls.Remove(m_DisplayPanel);
             goBackIconPictureBox.Visible = false;
             this.Controls.Add(mainPanel);
+        }
+
+        private void licenseNumberTextBox_Validated(object sender, EventArgs e)
+        {
+            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, displayNowButton);
         }
     }
 }

@@ -167,7 +167,7 @@ namespace DesktopGUI
         public void insertNewVehicleButton_Click(object sender, EventArgs e)
         {
             activeButtonAndHideSubMenu(sender, Color.Chartreuse);
-            openChildForm(new InflateVehiclesTiresForm());
+            openChildForm(new InsertNewVehicleForm());
         }
 
         public void displayButton_Click(object sender, EventArgs e)

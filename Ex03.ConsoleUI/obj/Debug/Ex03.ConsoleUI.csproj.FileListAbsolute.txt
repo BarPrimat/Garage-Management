@@ -1,0 +1,11 @@
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.pdb
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.dll
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.pdb
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.dll.config
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.csprojAssemblyReference.cache
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.csproj.CopyComplete
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.pdb
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.exe.config
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.exe
+C:\Users\Bar\Documents\GitHub\Garage-Management\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.exe

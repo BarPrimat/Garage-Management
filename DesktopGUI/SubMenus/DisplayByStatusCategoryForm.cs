@@ -73,11 +73,11 @@ namespace DesktopGUI.SubMenus
                     vehicleStatus = eVehicleStatus.PayedFor;
                 }
 
-                m_DisplayPanel.Text = ManagerLogicGUi.GarageManager.DisplayVehiclesByStatus(vehicleStatus);
+                m_DisplayPanel.Text = ManagerLogicGUI.GarageManager.DisplayVehiclesByStatus(vehicleStatus);
             }
             else
             {
-                m_DisplayTextBox.Text = ManagerLogicGUi.GarageManager.DisplayAllVehicles();
+                m_DisplayTextBox.Text = ManagerLogicGUI.GarageManager.DisplayAllVehicles();
             }
 
             goBackIconPictureBox.Visible = true;

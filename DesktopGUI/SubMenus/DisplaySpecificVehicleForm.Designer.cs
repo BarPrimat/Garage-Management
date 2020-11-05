@@ -38,6 +38,7 @@ namespace DesktopGUI.SubMenus
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.goBackIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
+            this.vehicleValidIconButton = new FontAwesome.Sharp.IconButton();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goBackIconPictureBox)).BeginInit();
@@ -47,6 +48,7 @@ namespace DesktopGUI.SubMenus
             // 
             this.displayNowButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.displayNowButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.displayNowButton.Enabled = false;
             this.displayNowButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.displayNowButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.displayNowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -73,6 +75,7 @@ namespace DesktopGUI.SubMenus
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.vehicleValidIconButton);
             this.mainPanel.Controls.Add(this.licenseNumberTextBox);
             this.mainPanel.Controls.Add(this.label3);
             this.mainPanel.Controls.Add(this.label2);
@@ -85,13 +88,16 @@ namespace DesktopGUI.SubMenus
             // 
             // licenseNumberTextBox
             // 
+            this.licenseNumberTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.licenseNumberTextBox.Location = new System.Drawing.Point(409, 149);
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.Size = new System.Drawing.Size(254, 26);
             this.licenseNumberTextBox.TabIndex = 15;
+            this.licenseNumberTextBox.Validated += new System.EventHandler(this.licenseNumberTextBox_Validated);
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -139,6 +145,31 @@ namespace DesktopGUI.SubMenus
             this.goBackIconPictureBox.Visible = false;
             this.goBackIconPictureBox.Click += new System.EventHandler(this.goBackIconPictureBox_Click);
             // 
+            // vehicleValidIconButton
+            // 
+            this.vehicleValidIconButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.vehicleValidIconButton.AutoSize = true;
+            this.vehicleValidIconButton.FlatAppearance.BorderSize = 0;
+            this.vehicleValidIconButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.vehicleValidIconButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.vehicleValidIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vehicleValidIconButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.vehicleValidIconButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.vehicleValidIconButton.IconChar = FontAwesome.Sharp.IconChar.ThumbsUp;
+            this.vehicleValidIconButton.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.vehicleValidIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.vehicleValidIconButton.IconSize = 35;
+            this.vehicleValidIconButton.Location = new System.Drawing.Point(669, 122);
+            this.vehicleValidIconButton.Name = "vehicleValidIconButton";
+            this.vehicleValidIconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.vehicleValidIconButton.Rotation = 0D;
+            this.vehicleValidIconButton.Size = new System.Drawing.Size(51, 81);
+            this.vehicleValidIconButton.TabIndex = 26;
+            this.vehicleValidIconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vehicleValidIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.vehicleValidIconButton.UseVisualStyleBackColor = true;
+            this.vehicleValidIconButton.Visible = false;
+            // 
             // DisplaySpecificVehicleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -170,5 +201,6 @@ namespace DesktopGUI.SubMenus
         private System.Windows.Forms.TextBox licenseNumberTextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        public FontAwesome.Sharp.IconButton vehicleValidIconButton;
     }
 }
