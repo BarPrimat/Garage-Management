@@ -33,12 +33,12 @@ namespace DesktopGUI.SubMenus
             this.displayNowButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.vehicleValidIconButton = new FontAwesome.Sharp.IconButton();
             this.licenseNumberTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.goBackIconPictureBox = new FontAwesome.Sharp.IconPictureBox();
-            this.vehicleValidIconButton = new FontAwesome.Sharp.IconButton();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goBackIconPictureBox)).BeginInit();
@@ -86,6 +86,31 @@ namespace DesktopGUI.SubMenus
             this.mainPanel.Size = new System.Drawing.Size(728, 395);
             this.mainPanel.TabIndex = 13;
             // 
+            // vehicleValidIconButton
+            // 
+            this.vehicleValidIconButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.vehicleValidIconButton.AutoSize = true;
+            this.vehicleValidIconButton.FlatAppearance.BorderSize = 0;
+            this.vehicleValidIconButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.vehicleValidIconButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.vehicleValidIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vehicleValidIconButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.vehicleValidIconButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.vehicleValidIconButton.IconChar = FontAwesome.Sharp.IconChar.ThumbsUp;
+            this.vehicleValidIconButton.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.vehicleValidIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.vehicleValidIconButton.IconSize = 35;
+            this.vehicleValidIconButton.Location = new System.Drawing.Point(669, 122);
+            this.vehicleValidIconButton.Name = "vehicleValidIconButton";
+            this.vehicleValidIconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.vehicleValidIconButton.Rotation = 0D;
+            this.vehicleValidIconButton.Size = new System.Drawing.Size(51, 81);
+            this.vehicleValidIconButton.TabIndex = 26;
+            this.vehicleValidIconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.vehicleValidIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.vehicleValidIconButton.UseVisualStyleBackColor = true;
+            this.vehicleValidIconButton.Visible = false;
+            // 
             // licenseNumberTextBox
             // 
             this.licenseNumberTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -93,7 +118,7 @@ namespace DesktopGUI.SubMenus
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.Size = new System.Drawing.Size(254, 26);
             this.licenseNumberTextBox.TabIndex = 15;
-            this.licenseNumberTextBox.Validated += new System.EventHandler(this.licenseNumberTextBox_Validated);
+            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
             // 
             // label3
             // 
@@ -144,31 +169,6 @@ namespace DesktopGUI.SubMenus
             this.goBackIconPictureBox.TabStop = false;
             this.goBackIconPictureBox.Visible = false;
             this.goBackIconPictureBox.Click += new System.EventHandler(this.goBackIconPictureBox_Click);
-            // 
-            // vehicleValidIconButton
-            // 
-            this.vehicleValidIconButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.vehicleValidIconButton.AutoSize = true;
-            this.vehicleValidIconButton.FlatAppearance.BorderSize = 0;
-            this.vehicleValidIconButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.vehicleValidIconButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.vehicleValidIconButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vehicleValidIconButton.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.vehicleValidIconButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.vehicleValidIconButton.IconChar = FontAwesome.Sharp.IconChar.ThumbsUp;
-            this.vehicleValidIconButton.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.vehicleValidIconButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.vehicleValidIconButton.IconSize = 35;
-            this.vehicleValidIconButton.Location = new System.Drawing.Point(669, 122);
-            this.vehicleValidIconButton.Name = "vehicleValidIconButton";
-            this.vehicleValidIconButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.vehicleValidIconButton.Rotation = 0D;
-            this.vehicleValidIconButton.Size = new System.Drawing.Size(51, 81);
-            this.vehicleValidIconButton.TabIndex = 26;
-            this.vehicleValidIconButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.vehicleValidIconButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.vehicleValidIconButton.UseVisualStyleBackColor = true;
-            this.vehicleValidIconButton.Visible = false;
             // 
             // DisplaySpecificVehicleForm
             // 

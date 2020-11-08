@@ -44,7 +44,7 @@ namespace DesktopGUI.SubMenus
             this.validChangeButton.Text = textToPrint;
         }
 
-        private void licenseNumberTextBox_Validated(object sender, EventArgs e)
+        private void licenseNumberTextBox_TextChanged(object sender, EventArgs e)
         {
             m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, changeNowButton);
         }

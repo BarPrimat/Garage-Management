@@ -22,11 +22,6 @@ namespace DesktopGUI.SubMenus
             InitializeComponent();
         }
 
-        private void licenseNumberTextBox_Validated(object sender, EventArgs e)
-        {
-            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, vehicleIsFilledButton);
-        }
-
         private void rechargeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             setupSubMenuRefuel(false);
@@ -44,6 +39,11 @@ namespace DesktopGUI.SubMenus
             fuelAmountTextBox.Visible = i_OpenRefuelSubMenu;
             timeToChargeLabel.Visible = !i_OpenRefuelSubMenu;
             timeToChargeTextBox.Visible = !i_OpenRefuelSubMenu;
+            invalidChargeIconButton.Visible = false;
+            invalidFuelAmountIconButton.Visible = false;
+            timeToChargeTextBox.Text = "0";
+            fuelAmountTextBox.Text = "0";
+
         }
 
         private void inflateNowButton_Click(object sender, EventArgs e)
@@ -69,6 +69,7 @@ namespace DesktopGUI.SubMenus
                 additionIsValid = false;
             }
 
+            vehicleIsFilledButton.Visible = true;
             vehicleIsFilledButton.IconChar = additionIsValid ? 
                                                  FontAwesome.Sharp.IconChar.ThumbsUp 
                                                  : FontAwesome.Sharp.IconChar.ExclamationCircle;
@@ -99,24 +100,27 @@ namespace DesktopGUI.SubMenus
             return fuelChoice;
         }
 
-        private void fuelAmountTextBox_Validated(object sender, EventArgs e)
-        {
-            isValidValueToChargeOrFuel(fuelAmountTextBox.Text, invalidFuelAmountIconButton);
-            timeToChargeTextBox.Text = "0";
-        }
-
-        private void timeToChargeTextBox_Validated(object sender, EventArgs e)
-        {
-            isValidValueToChargeOrFuel(timeToChargeTextBox.Text, invalidChargeIconButton);
-            fuelAmountTextBox.Text = "0";
-        }
-
         private void isValidValueToChargeOrFuel(string i_EnergyToAddTextBox, IconButton i_InvalidValueIconButton)
         {
             bool isVehicleEnable = m_CurrentVehicle != null;
 
             fillNowButton.Enabled = isVehicleEnable && float.TryParse(i_EnergyToAddTextBox, out m_EnergyToAdd);
             i_InvalidValueIconButton.Visible = !fillNowButton.Enabled;
+        }
+
+        private void licenseNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, vehicleIsFilledButton);
+        }
+
+        private void timeToChargeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            isValidValueToChargeOrFuel(timeToChargeTextBox.Text, invalidChargeIconButton);
+        }
+
+        private void fuelAmountTextBox_TextChanged(object sender, EventArgs e)
+        {
+            isValidValueToChargeOrFuel(fuelAmountTextBox.Text, invalidFuelAmountIconButton);
         }
     }
 }

@@ -22,36 +22,36 @@ namespace DesktopGUI.SubMenus
 
         private void insertNewVehicleButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.insertNewVehicleButton_Click(r_ParentForm.insertNewVehicleButton, EventArgs.Empty);
+            r_ParentForm.InsertNewVehicleButton_Click(r_ParentForm.insertNewVehicleButton, EventArgs.Empty);
         }
         
         private void changeStatusButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.changeStatusButton_Click(r_ParentForm.changeStatusButton, EventArgs.Empty);
+            r_ParentForm.ChangeStatusButton_Click(r_ParentForm.changeStatusButton, EventArgs.Empty);
         }
 
         // Start display option
-        private void specificVehicleButton_Click(object sender, EventArgs e)
+        public void SpecificVehicleButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.displayButton_Click(r_ParentForm.displayButton, EventArgs.Empty);
-            r_ParentForm.specificVehicleButton_Click(r_ParentForm.specificVehicleButton, EventArgs.Empty);
+            r_ParentForm.DisplayButton_Click(r_ParentForm.displayButton, EventArgs.Empty);
+            r_ParentForm.SpecificVehicleButton_Click(r_ParentForm.specificVehicleButton, EventArgs.Empty);
         }
 
         private void statusCategoryButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.displayButton_Click(r_ParentForm.displayButton, EventArgs.Empty);
-            r_ParentForm.statusCategoryButton_Click(r_ParentForm.statusCategoryButton, EventArgs.Empty);
+            r_ParentForm.DisplayButton_Click(r_ParentForm.displayButton, EventArgs.Empty);
+            r_ParentForm.StatusCategoryButton_Click(r_ParentForm.statusCategoryButton, EventArgs.Empty);
         }
         // End display oprion
 
         private void inflateVehiclesTiresButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.inflateVehiclesTiresButton_Click(r_ParentForm.inflateVehiclesTiresButton, EventArgs.Empty);
+            r_ParentForm.InflateVehiclesTiresButton_Click(r_ParentForm.inflateVehiclesTiresButton, EventArgs.Empty);
         }
 
         private void fillVehicleEnergyButton_Click(object sender, EventArgs e)
         {
-            r_ParentForm.fillVehicleEnergyButton_Click(r_ParentForm.fillVehicleEnergyButton, EventArgs.Empty);
+            r_ParentForm.FillVehicleEnergyButton_Click(r_ParentForm.fillVehicleEnergyButton, EventArgs.Empty);
         }
     }
 }

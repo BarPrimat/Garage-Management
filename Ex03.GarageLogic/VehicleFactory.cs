@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Ex03.GarageLogic
 {
@@ -10,7 +11,7 @@ namespace Ex03.GarageLogic
             ElectricMotorcycle,
             FuelBasedCar,
             ElectricCar,
-            FuelBasedTruck,
+            FuelBasedTruck
         }
 
         //// Car constants
@@ -53,6 +54,7 @@ namespace Ex03.GarageLogic
                     break;
             }
 
+            vehicle.VehicleType = i_VehicleType;
             addWheels(vehicle, i_VehicleType);
 
             return vehicle;
@@ -110,6 +112,52 @@ namespace Ex03.GarageLogic
             }
         }
 
+        public string GetFieldValue(Vehicle i_Vehicle, string i_FieldKey)
+        {
+            string requestedField = null;
+            switch (i_FieldKey)
+            {
+                case "Owner Name":
+                    requestedField = i_Vehicle.Owner.Name;
+                    break;
+                case "Owner Phone Number":
+                    requestedField = i_Vehicle.Owner.PhoneNumber;
+                    break;
+                case "Wheels Manufacturer":
+                    requestedField = i_Vehicle.WheelsList[0].Manufacturer;
+                    break;
+                case "Wheels Pressure":
+                    requestedField = i_Vehicle.WheelsList[0].CurrentAirPressure.ToString(); 
+                    break;
+                case "Current Fuel Amount (liters)":
+                    requestedField = (i_Vehicle.Engine as FuelEngine).CurrentFuelAmount.ToString();
+                    break;
+                case "Time left in Battery (hours)":
+                    requestedField = (i_Vehicle.Engine as ElectricEngine).RemainingTimeInHours.ToString();
+                    break;
+                case "Color":
+                    requestedField = (i_Vehicle as Car).Color.ToString();
+                    break;
+                case "Number Of Doors":
+                    requestedField = (i_Vehicle as Car).NumOfDoors.ToString();
+                    break;
+                case "License Type":
+                    requestedField = (i_Vehicle as Motorcycle).LicenseType.ToString();
+                    break;
+                case "Engine Volume":
+                    requestedField = (i_Vehicle as Motorcycle).EngineVolume.ToString();
+                    break;
+                case "if it Contains Dangerous Materials":
+                    requestedField = (i_Vehicle as Truck).ContainsDangerousMaterials.ToString();
+                    break;
+                case "Volume of Cargo":
+                    requestedField = (i_Vehicle as Truck).VolumeOfCargo.ToString();
+                    break;
+            }
+
+            return requestedField;
+        }
+        
         private Engine createEngine(eVehicleType i_VehicleType)
         {
             Engine engine = null;
@@ -182,6 +230,52 @@ namespace Ex03.GarageLogic
             }
 
             return parameterList;
+        }
+
+        public bool ParameterInputIsFloat(string i_Parameter)
+        {
+            bool isParameterInputNotString = false;
+
+            switch (i_Parameter)
+            {
+                case "Current Fuel Amount (liters)":
+                case "Time left in Battery (hours)":
+                case "Volume of Cargo":
+                case "Engine Volume":
+                case "Wheels Pressure":
+                    isParameterInputNotString = true;
+                    break;
+            }
+
+            return isParameterInputNotString;
+        }
+
+        public bool ParameterInputIsEnum(string i_Parameter, out string o_EnumStringValue)
+        {
+            bool isParameterInputNotString = false;
+
+            o_EnumStringValue = null;
+            switch(i_Parameter)
+            {
+                case "Color":
+                    o_EnumStringValue = EnumOperations.ListEnumValues<eColor>(true);
+                    isParameterInputNotString = true;
+                    break;
+                case "Number Of Doors":
+                    o_EnumStringValue = EnumOperations.ListEnumValues<eNumOfDoors>(true);
+                    isParameterInputNotString = true;
+                    break;
+                case "License Type":
+                    o_EnumStringValue = EnumOperations.ListEnumValues<eLicenseType>(true);
+                    isParameterInputNotString = true;
+                    break;
+                case "if it Contains Dangerous Materials":
+                    o_EnumStringValue = string.Format("Yes{0}No", Environment.NewLine);
+                    isParameterInputNotString = true;
+                    break;
+            }
+
+            return isParameterInputNotString;
         }
 
         private void addWheels(Vehicle i_Vehicle, eVehicleType i_VehicleType)

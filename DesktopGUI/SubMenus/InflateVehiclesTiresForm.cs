@@ -27,6 +27,7 @@ namespace DesktopGUI.SubMenus
             this.validChangeButton.Visible = true;
             if (m_CurrentVehicle != null)
             {
+                ManagerLogicGUI.GarageManager.FillTiresToMaximum(m_CurrentVehicle.LicenseNumber);
                 textToPrint = "Saved";
                 this.validChangeButton.IconChar = FontAwesome.Sharp.IconChar.ThumbsUp;
             }
@@ -34,9 +35,9 @@ namespace DesktopGUI.SubMenus
             this.validChangeButton.Text = textToPrint;
         }
 
-        private void licenseNumberTextBox_Validated(object sender, EventArgs e)
+        private void licenseNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            m_CurrentVehicle = ManagerLogicGUi.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, inflateNowButton);
+            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, inflateNowButton);
         }
     }
 }

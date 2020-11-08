@@ -57,7 +57,7 @@ namespace DesktopGUI.SubMenus
         private void displayNowButton_Click(object sender, EventArgs e)
         {
             this.Controls.Remove(mainPanel);
-            if (subOptionPanel.Visible)
+            if (sortedByStatusRadioButton.Checked)
             {
                 eVehicleStatus vehicleStatus = eVehicleStatus.InRepair;
                 if (inRepairRadioButton.Checked)
@@ -73,7 +73,7 @@ namespace DesktopGUI.SubMenus
                     vehicleStatus = eVehicleStatus.PayedFor;
                 }
 
-                m_DisplayPanel.Text = ManagerLogicGUI.GarageManager.DisplayVehiclesByStatus(vehicleStatus);
+                m_DisplayTextBox.Text = ManagerLogicGUI.GarageManager.DisplayVehiclesByStatus(vehicleStatus);
             }
             else
             {

@@ -130,7 +130,7 @@ namespace DesktopGUI.SubMenus
             this.specificVehicleButton.TabIndex = 6;
             this.specificVehicleButton.Text = "Display Scpecific vehicle";
             this.specificVehicleButton.UseVisualStyleBackColor = true;
-            this.specificVehicleButton.Click += new System.EventHandler(this.specificVehicleButton_Click);
+            this.specificVehicleButton.Click += new System.EventHandler(this.SpecificVehicleButton_Click);
             // 
             // inflateVehiclesTiresButton
             // 

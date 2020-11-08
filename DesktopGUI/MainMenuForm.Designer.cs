@@ -121,7 +121,7 @@
             this.fillVehicleEnergyButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.fillVehicleEnergyButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.fillVehicleEnergyButton.UseVisualStyleBackColor = true;
-            this.fillVehicleEnergyButton.Click += new System.EventHandler(this.fillVehicleEnergyButton_Click);
+            this.fillVehicleEnergyButton.Click += new System.EventHandler(this.FillVehicleEnergyButton_Click);
             // 
             // inflateVehiclesTiresButton
             // 
@@ -147,7 +147,7 @@
             this.inflateVehiclesTiresButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.inflateVehiclesTiresButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.inflateVehiclesTiresButton.UseVisualStyleBackColor = true;
-            this.inflateVehiclesTiresButton.Click += new System.EventHandler(this.inflateVehiclesTiresButton_Click);
+            this.inflateVehiclesTiresButton.Click += new System.EventHandler(this.InflateVehiclesTiresButton_Click);
             // 
             // changeStatusButton
             // 
@@ -173,7 +173,7 @@
             this.changeStatusButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.changeStatusButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.changeStatusButton.UseVisualStyleBackColor = true;
-            this.changeStatusButton.Click += new System.EventHandler(this.changeStatusButton_Click);
+            this.changeStatusButton.Click += new System.EventHandler(this.ChangeStatusButton_Click);
             // 
             // displaySubPanel
             // 
@@ -210,7 +210,7 @@
             this.statusCategoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.statusCategoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.statusCategoryButton.UseVisualStyleBackColor = true;
-            this.statusCategoryButton.Click += new System.EventHandler(this.statusCategoryButton_Click);
+            this.statusCategoryButton.Click += new System.EventHandler(this.StatusCategoryButton_Click);
             // 
             // specificVehicleButton
             // 
@@ -236,7 +236,7 @@
             this.specificVehicleButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.specificVehicleButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.specificVehicleButton.UseVisualStyleBackColor = true;
-            this.specificVehicleButton.Click += new System.EventHandler(this.specificVehicleButton_Click);
+            this.specificVehicleButton.Click += new System.EventHandler(this.SpecificVehicleButton_Click);
             // 
             // displayButton
             // 
@@ -262,7 +262,7 @@
             this.displayButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.displayButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.displayButton.UseVisualStyleBackColor = true;
-            this.displayButton.Click += new System.EventHandler(this.displayButton_Click);
+            this.displayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
             // insertNewVehicleButton
             // 
@@ -288,7 +288,7 @@
             this.insertNewVehicleButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.insertNewVehicleButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.insertNewVehicleButton.UseVisualStyleBackColor = true;
-            this.insertNewVehicleButton.Click += new System.EventHandler(this.insertNewVehicleButton_Click);
+            this.insertNewVehicleButton.Click += new System.EventHandler(this.InsertNewVehicleButton_Click);
             // 
             // homeButton
             // 
@@ -315,7 +315,7 @@
             this.homeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homeButton.UseVisualStyleBackColor = true;
-            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            this.homeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // panelLogo
             // 

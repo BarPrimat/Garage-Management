@@ -130,7 +130,7 @@ namespace DesktopGUI.SubMenus
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.Size = new System.Drawing.Size(254, 26);
             this.licenseNumberTextBox.TabIndex = 19;
-            this.licenseNumberTextBox.Validated += new System.EventHandler(this.licenseNumberTextBox_Validated);
+            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
             // 
             // label3
             // 

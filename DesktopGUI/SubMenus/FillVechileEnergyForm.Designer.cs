@@ -85,7 +85,7 @@ namespace DesktopGUI.SubMenus
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.Size = new System.Drawing.Size(254, 26);
             this.licenseNumberTextBox.TabIndex = 19;
-            this.licenseNumberTextBox.Validated += new System.EventHandler(this.licenseNumberTextBox_Validated);
+            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
             // 
             // label3
             // 
@@ -210,7 +210,7 @@ namespace DesktopGUI.SubMenus
             this.fuelAmountTextBox.TabIndex = 23;
             this.fuelAmountTextBox.Text = "0";
             this.fuelAmountTextBox.Visible = false;
-            this.fuelAmountTextBox.Validated += new System.EventHandler(this.fuelAmountTextBox_Validated);
+            this.fuelAmountTextBox.TextChanged += new System.EventHandler(this.fuelAmountTextBox_TextChanged);
             // 
             // timeToChargeLabel
             // 
@@ -247,7 +247,7 @@ namespace DesktopGUI.SubMenus
             this.timeToChargeTextBox.TabIndex = 25;
             this.timeToChargeTextBox.Text = "0";
             this.timeToChargeTextBox.Visible = false;
-            this.timeToChargeTextBox.Validated += new System.EventHandler(this.timeToChargeTextBox_Validated);
+            this.timeToChargeTextBox.TextChanged += new System.EventHandler(this.timeToChargeTextBox_TextChanged);
             // 
             // fillNowButton
             // 
@@ -268,8 +268,8 @@ namespace DesktopGUI.SubMenus
             // 
             // vehicleIsFilledButton
             // 
-            this.vehicleIsFilledButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.vehicleIsFilledButton.AutoSize = true;
+            this.vehicleIsFilledButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.vehicleIsFilledButton.FlatAppearance.BorderSize = 0;
             this.vehicleIsFilledButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.vehicleIsFilledButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
@@ -280,14 +280,14 @@ namespace DesktopGUI.SubMenus
             this.vehicleIsFilledButton.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.vehicleIsFilledButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.vehicleIsFilledButton.IconSize = 35;
-            this.vehicleIsFilledButton.Location = new System.Drawing.Point(272, 51);
+            this.vehicleIsFilledButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.vehicleIsFilledButton.Location = new System.Drawing.Point(0, 36);
             this.vehicleIsFilledButton.Name = "vehicleIsFilledButton";
             this.vehicleIsFilledButton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.vehicleIsFilledButton.Rotation = 0D;
-            this.vehicleIsFilledButton.Size = new System.Drawing.Size(193, 47);
+            this.vehicleIsFilledButton.Size = new System.Drawing.Size(728, 65);
             this.vehicleIsFilledButton.TabIndex = 23;
             this.vehicleIsFilledButton.Text = "Vehicle is filled";
-            this.vehicleIsFilledButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.vehicleIsFilledButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.vehicleIsFilledButton.UseVisualStyleBackColor = true;
             this.vehicleIsFilledButton.Visible = false;

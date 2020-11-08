@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Ex03.GarageLogic
 {
-    internal class Validation
+    public class Validation
     {
         public static void ValidRange(float i_Value, float i_MinValue, float i_MaxValue)
         {
