@@ -169,20 +169,24 @@ namespace DesktopGUI
 
         public void InsertNewVehicleButton_Click(object sender, EventArgs e)
         {
-            activeButtonAndHideSubMenu(sender, Color.Chartreuse);
+            activeButtonAndHideSubMenu(sender, Color.Aquamarine);
             openChildForm(new insertNewVehicleForm(this));
         }
 
         public void DisplayButton_Click(object sender, EventArgs e)
         {
-            activeButtonAndHideSubMenu(sender, Color.LawnGreen);
+            activeButtonAndHideSubMenu(sender, Color.Aquamarine);
             showSubMenu(displaySubPanel);
         }
 
         public void DisplaySpecificVehicle(object i_Sender, string i_LicenseNumber)
         {
-            DisplayButton_Click(displayButton, EventArgs.Empty);
-            activateButton(i_Sender, Color.Green);
+            if(!i_LicenseNumber.Equals(string.Empty))
+            {
+                DisplayButton_Click(displayButton, EventArgs.Empty);
+            }
+
+            activateButton(i_Sender, Color.MediumSeaGreen);
             openChildForm(new DisplaySpecificVehicleForm(i_LicenseNumber));
         }
 
@@ -194,26 +198,26 @@ namespace DesktopGUI
 
         public void StatusCategoryButton_Click(object sender, EventArgs e)
         {
-            activateButton(sender, Color.Green);
+            activateButton(sender, Color.MediumSeaGreen);
             openChildForm(new DisplayByStatusCategoryForm());
         }
         // End sub menu of Display button
 
         public void ChangeStatusButton_Click(object sender, EventArgs e)
         {
-            activeButtonAndHideSubMenu(sender, Color.Brown);
+            activeButtonAndHideSubMenu(sender, Color.Aquamarine);
             openChildForm(new ChangeStatusForm());
         }
 
         public void InflateVehiclesTiresButton_Click(object sender, EventArgs e)
         {
-            activeButtonAndHideSubMenu(sender, Color.RosyBrown);
+            activeButtonAndHideSubMenu(sender, Color.Aquamarine);
             openChildForm(new InflateVehiclesTiresForm());
         }
 
         public void FillVehicleEnergyButton_Click(object sender, EventArgs e)
         {
-            activeButtonAndHideSubMenu(sender, Color.ForestGreen);
+            activeButtonAndHideSubMenu(sender, Color.Aquamarine);
             openChildForm(new FillVehicleEnergyForm());
         }
 

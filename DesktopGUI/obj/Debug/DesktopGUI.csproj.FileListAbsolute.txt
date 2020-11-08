@@ -42,5 +42,3 @@ C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.
 C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.csproj.CopyComplete
 C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.exe
 C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.pdb
-C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.SubMenus.Form1.resources
-C:\Users\Bar\Documents\GitHub\Garage-Management\DesktopGUI\obj\Debug\DesktopGUI.SubMenus.UniqueFeaturesSubMenuInsertVeiclelForm.resources

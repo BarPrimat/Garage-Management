@@ -23,22 +23,22 @@ namespace DesktopGUI
 
         public static Vehicle ValidVehicleAndChangeIcon(string i_LicenseNumber, IconButton i_VehicleValidIcon, Button i_ChangeNowIcon)
         {
-            Vehicle vehicle = ValidVehicleAndChangeIcon(i_LicenseNumber, i_VehicleValidIcon);
+            Vehicle vehicle = ValidVehicleAndChangeIcon(i_LicenseNumber, i_VehicleValidIcon, IconChar.ThumbsUp, IconChar.ExclamationCircle);
 
             i_ChangeNowIcon.Enabled = vehicle != null;
 
             return vehicle;
         }
 
-        public static Vehicle ValidVehicleAndChangeIcon(string i_LicenseNumber, IconButton i_VehicleValidIcon)
+        public static Vehicle ValidVehicleAndChangeIcon(string i_LicenseNumber, IconButton i_VehicleValidIcon, IconChar i_IconCharIfVehicleFound, IconChar i_IconCharIfVehicleNotFound)
         {
             Vehicle vehicle;
             bool isVehicleExist = ManagerLogicGUI.GarageManager.FindVehicle(i_LicenseNumber, out vehicle);
 
             i_VehicleValidIcon.Visible = true;
             i_VehicleValidIcon.IconChar = isVehicleExist
-                                              ? FontAwesome.Sharp.IconChar.ThumbsUp
-                                              : FontAwesome.Sharp.IconChar.ExclamationCircle;
+                                              ? i_IconCharIfVehicleFound
+                                              : i_IconCharIfVehicleNotFound;
 
             return vehicle;
         }

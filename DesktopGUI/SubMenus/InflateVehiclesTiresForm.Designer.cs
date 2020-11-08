@@ -122,7 +122,6 @@ namespace DesktopGUI.SubMenus
             this.validChangeButton.Size = new System.Drawing.Size(193, 60);
             this.validChangeButton.TabIndex = 23;
             this.validChangeButton.Text = "Saved";
-            this.validChangeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.validChangeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.validChangeButton.UseVisualStyleBackColor = true;
             this.validChangeButton.Visible = false;

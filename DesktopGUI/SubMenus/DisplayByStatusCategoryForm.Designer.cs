@@ -126,10 +126,10 @@ namespace DesktopGUI.SubMenus
             this.allVehicleRadioButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.allVehicleRadioButton.Location = new System.Drawing.Point(85, 80);
             this.allVehicleRadioButton.Name = "allVehicleRadioButton";
-            this.allVehicleRadioButton.Size = new System.Drawing.Size(156, 24);
+            this.allVehicleRadioButton.Size = new System.Drawing.Size(164, 24);
             this.allVehicleRadioButton.TabIndex = 8;
             this.allVehicleRadioButton.TabStop = true;
-            this.allVehicleRadioButton.Text = "Display all vechile";
+            this.allVehicleRadioButton.Text = "Display all vehicles";
             this.allVehicleRadioButton.UseVisualStyleBackColor = true;
             this.allVehicleRadioButton.CheckedChanged += new System.EventHandler(this.allVehicleRadioButton_CheckedChanged);
             // 
@@ -141,9 +141,9 @@ namespace DesktopGUI.SubMenus
             this.sortedByStatusRadioButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.sortedByStatusRadioButton.Location = new System.Drawing.Point(397, 80);
             this.sortedByStatusRadioButton.Name = "sortedByStatusRadioButton";
-            this.sortedByStatusRadioButton.Size = new System.Drawing.Size(273, 24);
+            this.sortedByStatusRadioButton.Size = new System.Drawing.Size(281, 24);
             this.sortedByStatusRadioButton.TabIndex = 10;
-            this.sortedByStatusRadioButton.Text = "Display all vechile sorted by status";
+            this.sortedByStatusRadioButton.Text = "Display all vehicles sorted by status";
             this.sortedByStatusRadioButton.UseVisualStyleBackColor = true;
             this.sortedByStatusRadioButton.CheckedChanged += new System.EventHandler(this.sortedByStatusRadioButton_CheckedChanged);
             // 

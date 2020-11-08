@@ -39,17 +39,19 @@ namespace DesktopGUI.SubMenus
             this.specificVehicleButton = new System.Windows.Forms.Button();
             this.inflateVehiclesTiresButton = new System.Windows.Forms.Button();
             this.statusCategoryButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(175, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(148, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(350, 320);
+            this.pictureBox2.Size = new System.Drawing.Size(429, 385);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -62,7 +64,7 @@ namespace DesktopGUI.SubMenus
             this.insertNewVehicleButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.insertNewVehicleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.insertNewVehicleButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.insertNewVehicleButton.Location = new System.Drawing.Point(64, 33);
+            this.insertNewVehicleButton.Location = new System.Drawing.Point(64, 8);
             this.insertNewVehicleButton.Name = "insertNewVehicleButton";
             this.insertNewVehicleButton.Size = new System.Drawing.Size(193, 56);
             this.insertNewVehicleButton.TabIndex = 3;
@@ -79,9 +81,9 @@ namespace DesktopGUI.SubMenus
             this.panel1.Controls.Add(this.statusCategoryButton);
             this.panel1.Controls.Add(this.insertNewVehicleButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 338);
+            this.panel1.Location = new System.Drawing.Point(0, 388);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 202);
+            this.panel1.Size = new System.Drawing.Size(728, 152);
             this.panel1.TabIndex = 5;
             // 
             // fillVehicleEnergyButton
@@ -92,7 +94,7 @@ namespace DesktopGUI.SubMenus
             this.fillVehicleEnergyButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.fillVehicleEnergyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.fillVehicleEnergyButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.fillVehicleEnergyButton.Location = new System.Drawing.Point(462, 102);
+            this.fillVehicleEnergyButton.Location = new System.Drawing.Point(462, 77);
             this.fillVehicleEnergyButton.Name = "fillVehicleEnergyButton";
             this.fillVehicleEnergyButton.Size = new System.Drawing.Size(193, 56);
             this.fillVehicleEnergyButton.TabIndex = 8;
@@ -108,7 +110,7 @@ namespace DesktopGUI.SubMenus
             this.changeStatusButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.changeStatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changeStatusButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.changeStatusButton.Location = new System.Drawing.Point(64, 102);
+            this.changeStatusButton.Location = new System.Drawing.Point(64, 77);
             this.changeStatusButton.Name = "changeStatusButton";
             this.changeStatusButton.Size = new System.Drawing.Size(193, 56);
             this.changeStatusButton.TabIndex = 7;
@@ -124,7 +126,7 @@ namespace DesktopGUI.SubMenus
             this.specificVehicleButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.specificVehicleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.specificVehicleButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.specificVehicleButton.Location = new System.Drawing.Point(263, 33);
+            this.specificVehicleButton.Location = new System.Drawing.Point(263, 8);
             this.specificVehicleButton.Name = "specificVehicleButton";
             this.specificVehicleButton.Size = new System.Drawing.Size(193, 56);
             this.specificVehicleButton.TabIndex = 6;
@@ -140,7 +142,7 @@ namespace DesktopGUI.SubMenus
             this.inflateVehiclesTiresButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.inflateVehiclesTiresButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inflateVehiclesTiresButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.inflateVehiclesTiresButton.Location = new System.Drawing.Point(462, 33);
+            this.inflateVehiclesTiresButton.Location = new System.Drawing.Point(462, 8);
             this.inflateVehiclesTiresButton.Name = "inflateVehiclesTiresButton";
             this.inflateVehiclesTiresButton.Size = new System.Drawing.Size(193, 56);
             this.inflateVehiclesTiresButton.TabIndex = 5;
@@ -156,7 +158,7 @@ namespace DesktopGUI.SubMenus
             this.statusCategoryButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.statusCategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.statusCategoryButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.statusCategoryButton.Location = new System.Drawing.Point(263, 102);
+            this.statusCategoryButton.Location = new System.Drawing.Point(263, 77);
             this.statusCategoryButton.Name = "statusCategoryButton";
             this.statusCategoryButton.Size = new System.Drawing.Size(193, 56);
             this.statusCategoryButton.TabIndex = 4;
@@ -164,19 +166,29 @@ namespace DesktopGUI.SubMenus
             this.statusCategoryButton.UseVisualStyleBackColor = true;
             this.statusCategoryButton.Click += new System.EventHandler(this.statusCategoryButton_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(728, 388);
+            this.panel2.TabIndex = 6;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(728, 540);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm";
             this.Text = "HomeForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -191,5 +203,6 @@ namespace DesktopGUI.SubMenus
         private System.Windows.Forms.Button specificVehicleButton;
         private System.Windows.Forms.Button inflateVehiclesTiresButton;
         private System.Windows.Forms.Button statusCategoryButton;
+        private System.Windows.Forms.Panel panel2;
     }
 }

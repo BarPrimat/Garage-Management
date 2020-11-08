@@ -68,7 +68,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 646);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 700);
             this.panelSideMenu.TabIndex = 9;
             // 
             // exitButton
@@ -331,9 +331,9 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(67, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(65, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 97);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -344,9 +344,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(32)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(250, 540);
+            this.panel1.Location = new System.Drawing.Point(250, 594);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 106);
+            this.panel1.Size = new System.Drawing.Size(750, 106);
             this.panel1.TabIndex = 8;
             // 
             // mainFillPanel
@@ -355,7 +355,7 @@
             this.mainFillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainFillPanel.Location = new System.Drawing.Point(250, 0);
             this.mainFillPanel.Name = "mainFillPanel";
-            this.mainFillPanel.Size = new System.Drawing.Size(728, 540);
+            this.mainFillPanel.Size = new System.Drawing.Size(750, 594);
             this.mainFillPanel.TabIndex = 9;
             // 
             // notifyIcon1
@@ -367,15 +367,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 646);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.mainFillPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Garage Management";
             this.panelSideMenu.ResumeLayout(false);
             this.displaySubPanel.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

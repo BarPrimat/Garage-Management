@@ -89,12 +89,6 @@
     <Compile Include="SubMenus\FillVechileEnergyForm.Designer.cs">
       <DependentUpon>FillVechileEnergyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubMenus\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubMenus\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="SubMenus\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +112,6 @@
     </Compile>
     <Compile Include="SubMenus\DisplaySpecificVehicleForm.Designer.cs">
       <DependentUpon>DisplaySpecificVehicleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubMenus\UniqueFeaturesSubMenuInsertVeiclelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SubMenus\UniqueFeaturesSubMenuInsertVeiclelForm.Designer.cs">
-      <DependentUpon>UniqueFeaturesSubMenuInsertVeiclelForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
@@ -149,9 +137,6 @@
     <EmbeddedResource Include="SubMenus\FillVechileEnergyForm.resx">
       <DependentUpon>FillVechileEnergyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubMenus\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SubMenus\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubMenus\InsertNewVehicleForm.resx">
       <DependentUpon>InsertNewVehicleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubMenus\UniqueFeaturesSubMenuInsertVeiclelForm.resx">
-      <DependentUpon>UniqueFeaturesSubMenuInsertVeiclelForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

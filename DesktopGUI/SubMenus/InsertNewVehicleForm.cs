@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ex03.GarageLogic;
+using FontAwesome.Sharp;
 using static Ex03.GarageLogic.VehicleFactory;
 
 namespace DesktopGUI.SubMenus
@@ -43,7 +44,7 @@ namespace DesktopGUI.SubMenus
 
         private void licenseNumberTextBox_Validated(object sender, EventArgs e)
         {
-            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton);
+            m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, IconChar.Edit, IconChar.PlusCircle);
             displayThisVehicleButton.Visible = false;
             r_MustInputForNewVehicle[0] = false;
             vehicleTypeComboBox.Enabled = true;
@@ -125,15 +126,12 @@ namespace DesktopGUI.SubMenus
             m_VehicleType = Validation.ValidateAndParseEnum<eVehicleType>(getTypes(vehicleTypeComboBox.SelectedItem.ToString()));
             m_ParametersList = ManagerLogicGUI.VehicleFactory.GetExtendedParametersList(m_VehicleType);
             r_MustInputForNewVehicle[1] = true;
-            this.SuspendLayout();
             bases();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-            enabledCreateOrUpdateVehicleButton(); }
+            enabledCreateOrUpdateVehicleButton();
+        }
 
         private void bases()
         {
-            int counter = 0;
             int nextYLocationOfLabel = 175 + 80;
             int nextYLocationOfTextBox = 175 + 80;
 
@@ -153,62 +151,70 @@ namespace DesktopGUI.SubMenus
 
                 if (ManagerLogicGUI.VehicleFactory.ParameterInputIsEnum(parameterKey, out string enumString))
                 {
-                    const int v_OffsetForOverflow = 5;
-                    ComboBox comboBox = new ComboBox();
-                    string[] enumItemsList= enumString.Split('\n');
-                    int endLocationOfLabel = label.Size.Width + label.Location.X;
-
-                    comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-                    if(endLocationOfLabel >= 422)
-                    {
-                        comboBox.Location = new System.Drawing.Point(endLocationOfLabel + v_OffsetForOverflow, nextYLocationOfTextBox); 
-                        comboBox.Size = new System.Drawing.Size(170, 28);
-                    }
-                    else
-                    {
-                        comboBox.Location = new System.Drawing.Point(422, nextYLocationOfTextBox);
-                        comboBox.Size = new System.Drawing.Size(225, 28);
-                    }
-
-                    comboBox.Name = parameterKey;
-                    comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                    bool isFirstItem = true;
-                    foreach (string newItem in enumItemsList)
-                    {
-                        string replace = newItem;
-                        replace = newItem.Replace("\r", string.Empty);
-                        comboBox.Items.Add(replace);
-                        if (isFirstItem)
-                        {
-                            comboBox.SelectedItem = replace;
-                            isFirstItem = false;
-                        }
-                    }
-
-                    this.Controls.Add(comboBox);
-                    r_ListOfParameters.Add(label, comboBox);
+                    createComboBoxForSubParameter(label, enumString, parameterKey, nextYLocationOfTextBox);
                 }
-                else 
+                else
                 {
-                    TextBox textBox = new TextBox();
-
-                    textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-                    textBox.Location = new System.Drawing.Point(422, nextYLocationOfTextBox);
-                    textBox.Name = "textBox" + counter;
-                    textBox.Size = new System.Drawing.Size(225, 28);
-                    if (ManagerLogicGUI.VehicleFactory.ParameterInputIsFloat(parameterKey))
-                    {
-                        textBox.Validated += floatValid_TextBoxValidated;
-                        textBox.Text = "0";
-                    }
-
-                    this.Controls.Add(textBox);
-                    r_ListOfParameters.Add(label, textBox);
+                    createTextBoxForSubParameter(label, parameterKey, nextYLocationOfTextBox);
                 }
 
                 nextYLocationOfTextBox += 28;
-                counter++;
             }
+        }
+
+        private void createTextBoxForSubParameter(Label i_Label, string i_ParameterKey, int i_NextYLocationOfTextBox)
+        {
+            TextBox textBox = new TextBox();
+
+            textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            textBox.Location = new System.Drawing.Point(422, i_NextYLocationOfTextBox);
+            textBox.Name = i_ParameterKey;
+            textBox.Size = new System.Drawing.Size(225, 28);
+            if (ManagerLogicGUI.VehicleFactory.ParameterInputIsFloat(i_ParameterKey))
+            {
+                textBox.Validated += floatValid_TextBoxValidated;
+                textBox.Text = "0";
+            }
+
+            this.Controls.Add(textBox);
+            r_ListOfParameters.Add(i_Label, textBox);
+        }
+
+        private void createComboBoxForSubParameter(Label i_Label, string i_EnumStringValue, string i_ParameterKey, int i_NextYLocationOfTextBox)
+        {
+            const int v_OffsetForOverflow = 5;
+            ComboBox comboBox = new ComboBox();
+            string[] enumItemsList = i_EnumStringValue.Split('\n');
+            int endLocationOfLabel = i_Label.Size.Width + i_Label.Location.X;
+
+            comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            if (endLocationOfLabel >= 422) // 422 is the start X position of the comboBox 
+            {
+                comboBox.Location = new System.Drawing.Point(endLocationOfLabel + v_OffsetForOverflow, i_NextYLocationOfTextBox);
+                comboBox.Size = new System.Drawing.Size(170, 28);
+            }
+            else
+            {
+                comboBox.Location = new System.Drawing.Point(422, i_NextYLocationOfTextBox);
+                comboBox.Size = new System.Drawing.Size(225, 28);
+            }
+
+            comboBox.Name = i_ParameterKey;
+            comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            bool isFirstItem = true;
+            foreach (string newItem in enumItemsList)
+            {
+                string replace = newItem.Replace("\r", string.Empty);
+                comboBox.Items.Add(replace);
+                if (isFirstItem)
+                {
+                    comboBox.SelectedItem = replace;
+                    isFirstItem = false;
+                }
+            }
+
+            this.Controls.Add(comboBox);
+            r_ListOfParameters.Add(i_Label, comboBox);
         }
 
         private void floatValid_TextBoxValidated(object i_Sender, EventArgs i_E)
@@ -241,6 +247,7 @@ namespace DesktopGUI.SubMenus
             }
 
             setAllParameters();
+            vehicleTypeComboBox.Enabled = false;
             displayThisVehicleButton.Visible = true;
         }
 

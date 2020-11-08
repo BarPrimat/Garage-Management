@@ -86,7 +86,7 @@ namespace DesktopGUI.SubMenus
             this.displayThisVehicleButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.displayThisVehicleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.displayThisVehicleButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.displayThisVehicleButton.Location = new System.Drawing.Point(104, 3);
+            this.displayThisVehicleButton.Location = new System.Drawing.Point(463, 3);
             this.displayThisVehicleButton.Name = "displayThisVehicleButton";
             this.displayThisVehicleButton.Size = new System.Drawing.Size(154, 46);
             this.displayThisVehicleButton.TabIndex = 25;
