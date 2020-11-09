@@ -22,6 +22,7 @@ namespace DesktopGUI.SubMenus
         private readonly bool[] r_MustInputForNewVehicle = new bool[2];
         private readonly Dictionary<Label, object> r_ListOfParameters = new Dictionary<Label, object>();
         private readonly MainMenuForm r_ParentForm;
+        private bool m_IsVehicleAlreadyExist;
 
         public insertNewVehicleForm(MainMenuForm i_ParentForm)
         {
@@ -42,21 +43,27 @@ namespace DesktopGUI.SubMenus
             }
         }
 
-        private void licenseNumberTextBox_Validated(object sender, EventArgs e)
+        private void licenseNumberTextBox_TextChanged(object sender, EventArgs e)
         {
             m_CurrentVehicle = ManagerLogicGUI.ValidVehicleAndChangeIcon(licenseNumberTextBox.Text, vehicleValidIconButton, IconChar.Edit, IconChar.PlusCircle);
             displayThisVehicleButton.Visible = false;
             r_MustInputForNewVehicle[0] = false;
             vehicleTypeComboBox.Enabled = true;
+            problemButton.Visible = false;
             if (licenseNumberTextBox.Text != string.Empty)
             {
                 r_MustInputForNewVehicle[0] = true;
                 if (m_CurrentVehicle != null)
                 {
+                    m_IsVehicleAlreadyExist = true;
                     findComboBoxValueWithNumbers(vehicleTypeComboBox, m_CurrentVehicle.VehicleType.ToString());
                     r_MustInputForNewVehicle[0] = true;
                     getAllCurrentVehicle();
                     vehicleTypeComboBox.Enabled = false;
+                }
+                else
+                {
+                    m_IsVehicleAlreadyExist = false;
                 }
             }
 
@@ -126,14 +133,15 @@ namespace DesktopGUI.SubMenus
             m_VehicleType = Validation.ValidateAndParseEnum<eVehicleType>(getTypes(vehicleTypeComboBox.SelectedItem.ToString()));
             m_ParametersList = ManagerLogicGUI.VehicleFactory.GetExtendedParametersList(m_VehicleType);
             r_MustInputForNewVehicle[1] = true;
-            bases();
+            createSubParametersForVehicleType();
             enabledCreateOrUpdateVehicleButton();
         }
 
-        private void bases()
+        private void createSubParametersForVehicleType()
         {
-            int nextYLocationOfLabel = 175 + 80;
-            int nextYLocationOfTextBox = 175 + 80;
+            const int v_YOffset = 20;
+            int nextYLocationOfLabel = vehicleTypeLabel.Location.Y + vehicleTypeLabel.Size.Height + v_YOffset;
+            int nextYLocationOfTextBox = nextYLocationOfLabel;
 
             foreach (string parameterKey in m_ParametersList)
             {
@@ -143,7 +151,7 @@ namespace DesktopGUI.SubMenus
                 label.AutoSize = true;
                 label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
                 label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-                label.Location = new System.Drawing.Point(50, nextYLocationOfLabel);
+                label.Location = new System.Drawing.Point(vehicleTypeLabel.Location.X, nextYLocationOfLabel);
                 nextYLocationOfLabel += 28;
                 label.Name = parameterKey;
                 label.Text =  parameterKey;
@@ -167,9 +175,9 @@ namespace DesktopGUI.SubMenus
             TextBox textBox = new TextBox();
 
             textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            textBox.Location = new System.Drawing.Point(422, i_NextYLocationOfTextBox);
+            textBox.Location = new System.Drawing.Point(vehicleTypeComboBox.Location.X, i_NextYLocationOfTextBox);
             textBox.Name = i_ParameterKey;
-            textBox.Size = new System.Drawing.Size(225, 28);
+            textBox.Size = vehicleTypeComboBox.Size;
             if (ManagerLogicGUI.VehicleFactory.ParameterInputIsFloat(i_ParameterKey))
             {
                 textBox.Validated += floatValid_TextBoxValidated;
@@ -188,15 +196,15 @@ namespace DesktopGUI.SubMenus
             int endLocationOfLabel = i_Label.Size.Width + i_Label.Location.X;
 
             comboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            if (endLocationOfLabel >= 422) // 422 is the start X position of the comboBox 
+            if (endLocationOfLabel >= vehicleTypeComboBox.Location.X)
             {
                 comboBox.Location = new System.Drawing.Point(endLocationOfLabel + v_OffsetForOverflow, i_NextYLocationOfTextBox);
                 comboBox.Size = new System.Drawing.Size(170, 28);
             }
             else
             {
-                comboBox.Location = new System.Drawing.Point(422, i_NextYLocationOfTextBox);
-                comboBox.Size = new System.Drawing.Size(225, 28);
+                comboBox.Location = new System.Drawing.Point(vehicleTypeComboBox.Location.X, i_NextYLocationOfTextBox);
+                comboBox.Size = vehicleTypeComboBox.Size;
             }
 
             comboBox.Name = i_ParameterKey;
@@ -253,6 +261,8 @@ namespace DesktopGUI.SubMenus
 
         private void setAllParameters()
         {
+            bool isAllSetFieldValueWorkWell = true;
+
             foreach (KeyValuePair<Label, object> keyValuePair in r_ListOfParameters)
             {
                 string parameterKey = keyValuePair.Key.Name;
@@ -275,10 +285,20 @@ namespace DesktopGUI.SubMenus
                 }
                 catch (Exception e)
                 {
+                    isAllSetFieldValueWorkWell = false;
+                    problemButton.IconChar = IconChar.ExclamationCircle;
                     problemButton.Text = e.Message;
-                    problemButton.Visible = true;
                 }
             }
+
+            if(isAllSetFieldValueWorkWell)
+            {
+                problemButton.IconChar = IconChar.ThumbsUp;
+                problemButton.Text = m_IsVehicleAlreadyExist ? "Vehicle is update" : "New vehicle is create";
+                problemButton.Visible = true;
+            }
+
+            problemButton.Visible = true;
         }
 
         private void displayThisVehicleButton_Click(object sender, EventArgs e)

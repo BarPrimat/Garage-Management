@@ -81,6 +81,7 @@ namespace DesktopGUI.SubMenus
             // displayThisVehicleButton
             // 
             this.displayThisVehicleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.displayThisVehicleButton.AutoSize = true;
             this.displayThisVehicleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.displayThisVehicleButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.displayThisVehicleButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -170,7 +171,7 @@ namespace DesktopGUI.SubMenus
             this.licenseNumberTextBox.Name = "licenseNumberTextBox";
             this.licenseNumberTextBox.Size = new System.Drawing.Size(254, 26);
             this.licenseNumberTextBox.TabIndex = 32;
-            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_Validated);
+            this.licenseNumberTextBox.TextChanged += new System.EventHandler(this.licenseNumberTextBox_TextChanged);
             // 
             // licenseVehicleLabel
             // 

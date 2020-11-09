@@ -28,13 +28,6 @@ namespace DesktopGUI
         public MainMenuForm()
         {
             InitializeComponent();
-           // this.Text = string.Empty;
-           // this.ControlBox = false; 
-            // this.DoubleBuffered = true;
-            // this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            // this.SetStyle(ControlStyles.ResizeRedraw, true);
-            // this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
             r_LeftBorderPanelForButton = new Panel();
             r_LeftBorderPanelForSubButton = new Panel();
             r_LeftBorderPanelForButton.Size = new Size(7,60);
@@ -90,23 +83,6 @@ namespace DesktopGUI
                 m_CurrentButton.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
-
-
-
-        /*
-        // Drag form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMassage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        private void titleBarPanel_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMassage(this.Handle, 0x112, 0xf012, 0);
-        }
-        */
 
         private void initFirstMenu()
         { 
