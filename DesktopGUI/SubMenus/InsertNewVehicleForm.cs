@@ -38,7 +38,6 @@ namespace DesktopGUI.SubMenus
             m_ArrOfAllEnumVehicleType = allEnumVehicleType.Split('\n');
             foreach (string newItem in m_ArrOfAllEnumVehicleType)
             {
-
                 vehicleTypeComboBox.Items.Add(newItem.Replace("\r", string.Empty));
             }
         }
